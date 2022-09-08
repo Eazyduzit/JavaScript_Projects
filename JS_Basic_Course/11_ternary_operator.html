@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERNARY OPERATOR</title>
+</head>
+<body>
+
+    <script>
+        // TERNARY OPERATOR
+
+        // condition ? expr1 : expr2  (shorcut for if statement, checks for true false)
+        // normal if else (true false)
+        var age = 17;
+
+        if (age >= 18){
+            console.log("You are an adult.");
+        }else{
+            console.log("You are a kid");
+        };
+        // Ternary version of the same statement. wow kinda nice.
+        console.log((age >= 18) ? "You are an adult." : "You are a kid."); // (condition) ? true : false
+
+
+        // more conditions in one Ternary statement.
+        var stop;
+
+        age > 18 ? (
+            console.log("Ok, you can go."),
+            stop = false
+        ) : (
+            console.log("Sorry, you are too young."),
+            stop = true
+        );
+
+
+        // Ternary operator inside another Ternary operator
+        var firstCheck = false, 
+            secondCheck = false,
+            access = firstCheck ? "Access denied." : secondCheck ? "Access denied." : "Access granted.";
+
+            console.log(access);
+    </script>
+    
+</body>
+</html>

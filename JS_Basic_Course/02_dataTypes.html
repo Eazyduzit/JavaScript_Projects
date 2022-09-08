@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <script>
+        // DATA TYPES
+        // There are 7 data types
+
+        // Boolean (true or false)
+        var data = true; //or false
+            if (data) {
+            console.log("Its good");
+            }else{
+            console.log("Its bad");
+        }
+
+        // null (means no value)
+        var n = null;
+        console.log(n * 32); //Going to be 0 because all math with 0 = 0.
+
+        // undefined (Not decleared or no value)
+        var a; //this is a undefined variable
+        console.log(a + 2); //returns NaN (not a number) because its nothing.
+
+        // Number
+        var num = 4.6;
+        var ber = 5.4;
+        console.log(num + ber); //returns 10. numbers.
+
+        // String "Hey" (anything thats a word)
+        var name = "Marius";
+        console.log("Hello! My name is " + name);
+
+        // Symbol
+        var sym1 = Symbol("sym");
+        var sym2 = Symbol("sym");
+        console.log(sym1 == sym2); //returns false beacuse they are not equal. (even tho they are but Symbol works like that)        
+        console.log(String(sym1) == String(sym2)); //returns true because its a string.
+        console.log(String(sym1)); //returns the whole variable
+
+        // Object (are properties)
+        var myCar = new Object();
+        myCar.make = "Tesla";
+        myCar.model = "Model S"
+        console.log(myCar.make + " " + myCar.model);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copying Arrays</title>
+</head>
+<body>
+    <script>
+        // COPYING ARRAYS
+
+        var original = [true, true, undefined, false, null];
+
+        // slice (normally used to slice an array into parts, but can also be used to copy an array)
+        var copy1 = original.slice(0);
+
+        // spread operator (can also be used to copy an array)
+        var copy2 = [...original];
+
+        console.log(original, copy1, copy2);
+        
+        // If you have an array or an object in your array these methods will not work and you will have to do, DEEP copying.
+        
+        // DEEP copying
+        var deepArray = [["FreeCodeCamp"]];
+        var shallowCopy = deepArray.slice(0);
+
+        shallowCopy[0].push("is great");
+        console.log(deepArray[0], shallowCopy[0]);
+
+        // another method
+        var deepCopy = JSON.parse(JSON.stringify(deepArray));
+
+        deepCopy[0].push("is great");
+        console.log(deepArray[0], deepCopy[0]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NULL VS UNDEFINED</title>
+</head>
+<body>
+
+    <script>
+        // NULL VS UNDEFINED
+
+        //undefined means it has been declared but not assigned a value.
+        //null is an assigment value
+        var test;
+        console.log(test); //var test had been declared but not assigned a value so will return undefined
+
+        test = null;
+        console.log(test); //we gave test the value null, so now it will log null.
+
+        console.log(typeof null); //logs object
+        console.log(typeof undefined); //logs undefined
+        console.log(null === undefined); //obviously returns false
+        console.log(null == undefined); //but this returns true, because JS considers null and undefined to be equal. but not strictly.
+        console.log(!null); //returns true because null is false. so not null equals true.
+        console.log(!!null); //returns false
+        console.log(1 + null); //equals 1 because in math null is 0.
+        console.log(1 + undefined); //returns NaN (not a number) because undefined is not a number.
+
+    </script>
+    
+</body>
+</html>

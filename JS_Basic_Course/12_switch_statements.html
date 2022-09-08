@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Statements</title>
+</head>
+<body>
+    
+    <script>
+        // SWITCH STATEMENTS
+
+        // check for day.
+        let day;
+        switch (new Date().getDay()){  // new Date is a JS thing so it knows what day it actually is. then checks that against my switch case.
+            case 0:
+                day = "Sunday";
+                    break;  // break means its gonna be done with the code here and go to the end of the switch statement.
+            case 1:
+                day = "Monday";
+                    break;
+            case 2:
+                day = "Tuesday";
+                    break;
+            case 3:
+                day = "Wednesday";
+                    break;
+            case 4:
+                day = "Thursday";
+                    break;
+            case 5:
+                day = "Friday";
+                    break;
+            case 6:
+                day = "Saturday";
+                    break;
+        }
+        console.log(day);
+
+
+        // 
+        var Animal = "Dog";
+        switch (Animal){ // looks for the variable in the cases
+            case "Cow":
+            case "Giraffe":
+            case "Dog": // finds Dog
+            case "Pig":
+                console.log("This animal will go to Noah\'s Ark."); // logs it
+                break; // and breaks. its done.
+            case "Spoon":
+                console.log("A spoon is not an animal.");
+                break;
+            case "Dinosaur":
+                default: // means false. if the var dont match any of the cases it will default to this.
+                console.log("This animal will not be on the Ark.");
+        }
+    </script>
+
+</body>
+</html>

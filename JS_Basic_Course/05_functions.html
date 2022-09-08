@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        // FUNCTIONS
+
+        //Addition
+        function nameSquare(number){ //function - name - parameter.
+            return number * number;
+        }
+        console.log(nameSquare(4)); //will log the result of 4*4 wich = 16.
+
+
+        //Global and Local scope
+        var someVar = "Hat"; //variable defined before (or outside) a Function is called a global variable.
+        function myFun(){
+            var someVar = "Shoe"; //and variables defined within a function is called local variables.
+            console.log(someVar); //logged inside function.
+        }
+        myFun(); //runs the Function.
+        console.log(someVar); //logged outside function. Therefor it will log both variables even tho they have the same variable name.
+
+       
+        //Nesting Functions
+        console.log(addSquares(1, 3)); //you can call a function before it appears in the code (hoisting?)
+
+        function addSquares(a, b){ //main function
+            function square(x){ //nested function
+                return x * x;
+            }
+            return square(a) + square(b); //nested function has to be called inside the main function.
+        }
+        a = addSquares(2, 3); //returns 13 (2*2=4 + 3*3=9 result 4+9=13)
+        b = addSquares(3, 4); //returns 25
+        c = addSquares(4, 5); //returns 41
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+
+    <script>
+        //HOISTING
+
+        console.log(definedLater); //not defined yet, but var get hoisted to top.
+        var definedLater;
+        definedLater = "I am defined!";
+        console.log(definedLater); //defined so will log defined variable
+
+
+        console.log(definedSimultaneously); //var gets hoisted to the top, but the defenition is not. has been declared, but not defined.
+        var definedSimultaneously = "I am defined!";
+        console.log(definedSimultaneously); //now it is defined (kinda like global/local scopes but they are outside/inside functions)
+
+
+        doSomethingElse(); //function gets called here
+        function doSomethingElse(){ //but is not actually declared before here. but it gets hoisted to the top.
+            console.log("I did it!") //functions are also hoisted to the top.
+        };
+
+
+        functionVar(); //uncaught type error: functionVar is not a function
+        var functionVar = function(){
+            console.log("I did it!")
+        };
+
+        //DECLARE ALL VARIABLES AT THE TOP OF THE FUNCTION SCOPE (DEFINE VARIABLES BEFORE USING THEM)
+        //BUT DEFINE YOU FUNCTIONS AT THE BOTTOM OF THE SCOPE TO KEEP THEM OUT OF THE WAY
+
+    </script>
+    
+</body>
+</html>

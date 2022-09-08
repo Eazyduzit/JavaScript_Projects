@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Basics</title>
+</head>
+<body>
+    <script>
+        // ARRAY BASICS
+
+        // these are strings but you can stor ANY data type in an array!
+        var sandwich = ["peanut butter", "jelly", "bread"];
+
+        // you can also nest arrays in array (storing an array inside an array)
+        var teams = [["Bulls", 23], ["White Sox", 45]];
+
+        // you access array items using index [starts at 0]
+        console.log(sandwich[1]);
+
+        // you cans also change an array using index
+        sandwich[1] = "bananas";
+        console.log(sandwich);
+
+        // you can access several items in ana array with index
+        console.log(teams[1][0]);
+
+        // and change..
+        teams[1][0] = "Red Sox";
+        console.log(teams);
+
+        // uses the forEach method to print all the elements in the array.
+        sandwich.forEach(function(element){
+            console.log(element);
+        });
+    </script>
+</body>
+</html>

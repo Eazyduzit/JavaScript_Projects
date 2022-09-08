@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Operators & If Else</title>
+</head>
+<body>
+
+    <script>
+        // Comparison Operators & If Else
+
+        //if.. else.. if = true, else = false.
+        var isFCCGreat = true;
+        if (isFCCGreat){ //if true, run.. because var is defined as true. if we change it to false this will not run..
+            console.log("Free Code Camp is Great!");
+        }else{ //if false, run this.. so if var is defined as false it will run this instead.
+            console.log("Free Code Camp is still Great!");
+        };
+
+        //Comparison Operators
+        // > greater than, < less than, <= less than or equal to, >= more than or equal to, == equals, != not equals
+        var age = 19;
+        if (age >= 18){
+            console.log("You are an adult!");
+        }else{
+            console.log("You are a minor!");
+        };
+
+
+        var age = 2;
+        if (age >= 18){
+            console.log("You are an adult!");
+        }else if (age < 3){
+            console.log("You are a baby!");
+        }else if (age < 18){
+            console.log("You are a minor!");
+        };
+
+
+        var age = 18;
+        if (age == 18){
+            console.log("You are eighteen!");
+        }else if (age != 18){
+            console.log("You are NOT eighteen!");
+        };
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGICAL OPERATORS & SHORT CIRCUIT EVALUATION</title>
+</head>
+<body>
+
+    <script>
+        // LOGICAL OPERATORS & SHORT CIRCUIT EVALUATION
+        // AND: &&    OR: ||
+
+        //nested if statement
+        var num = 7;
+        if (num > 5 && num < 10){
+            console.log("UniCorn!");
+        }
+
+        //short circuit evaluation
+        if (4 > 5 && 5 > 6){ //it didnt even need to evaulate the second condition (short circuit)
+            console.log("Yes");
+        }else{
+            console.log("No");
+        }
+
+
+
+        var test = true;
+        var isTrue = function(){
+            console.log("Test is true");
+        };
+        var isFalse = function(){
+            console.log("Test is false");
+        };
+        if (test){
+            isTrue();
+        };
+        (test && isTrue()); //short circuit way of doing the same as the if above.
+
+        test = false;
+        if (!test){
+            isFalse();
+        };
+        (test || isFalse()); //again, short circuit way of doing the same as the if above.
+
+
+
+        function theSameOldFoo(name){
+            name = name || 'Bar'; //name is equal to name OR 'Bar'. And since name is not declared, it will equal to 'Bar'.
+            console.log("My friend's name is " + name);
+        }
+        theSameOldFoo();
+        theSameOldFoo('Mar');
+        
+    </script>
+    
+</body>
+</html>

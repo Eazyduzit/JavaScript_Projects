@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <script>
+        // STRINGS
+
+        // STRING BASICS 
+
+        var myName = "Marius";
+        var sentence = "He said \"Hi!\"";
+        var sentence1 = 'He said "Hi!"';
+        console.log(sentence, sentence1);
+
+        var fullName = "Marius " + "Skjellerud";
+        console.log(fullName);
+
+        var sentence2 = "My name is " + fullName;
+        console.log(sentence2);
+
+        fullName += " is my name.";
+        console.log(fullName);
+
+        // Other code outputs are:
+        // \' single quote
+        // \" double quote
+        // \\ backslash
+        // \n newline
+        // \r carriage return
+        // \t tab
+        // \b backspace
+        // \f form feed
+
+
+        // STRINGS [Bracket Notations]
+
+        var firstName = "Marius";
+        console.log(firstName[0]); //Will show first letter beacuse JS starts at 0. 1 will get the second, and so on..
+        console.log(firstName[firstName.length - 1]); //Will give the last character of the string. -2 gets second to last, and so on.. 
+
+
+        // 20 STRING METHODS
+
+        var stringOne = "I am a self taught developer, by my self."
+
+        // charAt()
+        console.log(stringOne.charAt(2)); //returns character "a"
+
+        // charCodeAt() 
+        console.log(stringOne.charCodeAt(2)); //returns unicode character of "a"
+
+        // concat() 
+        console.log(stringOne.concat(stringTwo)); //returns two or more strings, and returns a new joint string
+       
+        // endsWith()
+        console.log(stringOne.endsWith("developer")); //returns true because that strig ends with that word
+
+        // fromCharCode()
+        console.log(String.fromCharCode(97)); //returns unicode to characters
+
+        // includes()
+        console.log(stringOne.includes("self")); //checks if string include the word/character and returns true/false
+
+        // indexOf()
+        console.log(stringOne.indexOf("self")); //returns the FIRST occurence of a value in a string (counts each letter and spaces).
+
+        // lastIndexOf()
+        console.log(stringOne.lastIndexOf("self")); //returns the LAST occurence of a value in a string (counts each letter and spaces).
+
+        // match()
+        console.log(stringOne.match(/self/g)); //matches all instances and returns an array with the amount of occurances.
+        
+        // repeat()
+        console.log(stringOne.repeat(3)); //repeats the string amount of times
+
+        // replace()
+        console.log(stringOne.replace(/self/g, "SELF")); //will replace whatever you choose.
+
+        // search()
+        console.log(stringOne.search("self")); //returns position of match
+
+        // slice()
+        console.log(stringOne.slice(19, 22)); //retracts part of a string and returns a new string with whats inbetween the slice.
+
+        // split()
+        console.log(stringOne.split(" ")); //splits an array of a string into sub strings (split out the spaces here and get all the words)
+
+        // startsWith()
+        console.log(stringOne.startsWith("I")); //checks if a string starts with something and returs true/false
+
+        // substr()
+        console.log(stringOne.substr(19, 3)); //kinda like slice. starts with character, then counts number of charatcters to return from there..
+
+        // substring()
+        console.log(stringOne.substring(19, 22)); //kinda like slice. (very similar?)
+
+        // toLowerCase()
+        console.log(stringOne.toLowerCase()); //makes it all lower case
+
+        // toUpperCase() 
+        console.log(stringOne.toUpperCase()); //makes it all upper case
+
+        // trim()
+        var stringTwo = "      I do front end development       "
+        console.log(stringTwo.trim()); //remoces whitespace from either side of the string
+ 
+    </script>
+</body>
+</html>

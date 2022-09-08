@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>== VS ===</title>
+</head>
+<body>
+
+    <script>
+        // == VS ===
+
+        // == abstract equality
+        // === strict equality
+
+        console.log(3 == "3"); //string 3 converted to number 3 before comparison is made, so returns true
+        console.log(3 === "3"); //but its strictly not the same. one is a string one is a number, so returns false
+
+
+        console.log(true == "1"); //in JS true = to 1, but false = to 0. So this returns true
+        console.log(true === "1"); //but its strictly not true, so returns false
+
+
+        console.log("This is a string" == new String("This is a string")); //string literals (1st string) are different than string objects (2nd string)
+        console.log("This is a string" === new String("This is a string")); //but again this is STRICTLY not true.
+
+        // SO IN SUMMARY ITS USUALLY BETTER TOU USE === TO MAKE STRICT COMPARISONS SO YOUR CODE DOES NOT ACCDENTALY CAUSE FALSE COMPARISONS,
+        // CAUSE BY ABSTRACT EQUALITY. (lol, confusing but i get it.)
+    </script>
+    
+</body>
+</html>
