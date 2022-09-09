@@ -1,0 +1,141 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+:root{
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * .9);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Making the board and the cells */
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center; /*content centers the board itself*/
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center; /*items centers the items within the board*/
+    align-items: center; 
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+/* Making the board and the cells */
+
+/* Removing borders from board */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child, 
+.cell:nth-child(8),
+.cell:nth-child(7){
+    border-bottom: none;
+}
+/* Removing borders from board */
+
+/* Making the X and the O, and hover effetcts*/
+.cell.x,
+.cell.o{
+    cursor: not-allowed;
+}
+.cell.x::before,
+.cell.x::after,
+.cell.o::before{
+    background-color: hsl(0, 0%, 0%);
+}
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before{
+    background-color: hsl(0, 0%, 83%);
+}
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before{
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after{
+    transform: rotate(-45deg);
+}
+.cell.o::before,
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::after{
+    width: calc(var(--mark-size) * .7);
+    height: calc(var(--mark-size) * .7);
+    background-color: hsl(0, 0%, 100%);
+}
+/* Making the X and the O, and hover effetcts*/
+
+/* Making the winning message screen */
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: hsl(0, 0%, 100%);
+    font-size: 5rem;
+}
+.winning-message.show{
+    display: flex;
+}
+.winning-message button{
+    font-size: 3rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 0%);
+    padding: .25em .5em;
+    cursor: pointer;
+}
+.winning-message button:hover{
+    background-color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+/* Making the winning message screen */
